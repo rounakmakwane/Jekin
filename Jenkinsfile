@@ -12,7 +12,7 @@ pipeline {
       steps {
              script {
               echo 'START'
-              echo ${env.ec3}
+              echo "${env.ec3}"
               sshPublisher(
                continueOnError: false, failOnError: true,
                publishers: [
