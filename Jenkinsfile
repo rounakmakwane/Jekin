@@ -1,5 +1,7 @@
 pipeline {
     agent any
+
+    stages {
     stage('SSH transfer') {
      script {
       sshPublisher(
@@ -19,4 +21,5 @@ pipeline {
        ])
      }
     }
+  }
 }
