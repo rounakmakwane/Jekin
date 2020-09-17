@@ -11,6 +11,8 @@ pipeline {
   stage('Stage 2') {
       steps {
              script {
+              echo 'START'
+              echo '${env.ec3}'
               sshPublisher(
                continueOnError: false, failOnError: true,
                publishers: [
