@@ -17,7 +17,7 @@ pipeline {
                continueOnError: false, failOnError: true,
                publishers: [
                 sshPublisherDesc(
-                 configName: "${env.ec3}",
+                 configName: "ec3",
                  verbose: true,
                  transfers: [
                   sshTransfer(
