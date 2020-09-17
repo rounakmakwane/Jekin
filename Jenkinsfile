@@ -1,14 +1,5 @@
 pipeline {
     agent any
-
-    stages {
-        stage ('Compile Stage') {
-
-            steps {
-                    echo 'deploy'
-            }
-        }
-    
     stage('SSH transfer') {
      script {
       sshPublisher(
@@ -28,5 +19,4 @@ pipeline {
        ])
      }
     }
-  }
 }
