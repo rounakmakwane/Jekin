@@ -8,7 +8,7 @@ pipeline {
                     echo 'deploy'
             }
         }
-    }
+    
     stage('SSH transfer') {
      script {
       sshPublisher(
@@ -28,4 +28,5 @@ pipeline {
        ])
      }
     }
+  }
 }
