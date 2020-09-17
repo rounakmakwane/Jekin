@@ -1,13 +1,21 @@
-stage('Build'){
-  script{
-    try {
-      if(isUnix()){
-          sh 'mvn clean package'
-      }else{
-       bat 'mvn clean package'
+   steps {
+    stage('SSH transfer') {
+     script {
+      sshPublisher(
+       continueOnError: false, failOnError: true,
+       publishers: [
+        sshPublisherDesc(
+         configName: "${env.ec3}",
+         verbose: true,
+         transfers: [
+          sshTransfer(
+           sourceFiles: "*/",
+           removePrefix: "",
+           remoteDirectory: "/jenkin",
+           execCommand: "ls"
+          )
+         ])
+       ])
       }
-    } catch(err) {
-    throw err
+     }
     }
-   }
-}
