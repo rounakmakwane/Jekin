@@ -23,7 +23,7 @@ pipeline {
                   sshTransfer(
                    sourceFiles: "*/",
                    removePrefix: "",
-                   remoteDirectory: "/test",
+                   remoteDirectory: "/jenkin",
                    execCommand: "ls"
                   )
                  ])
